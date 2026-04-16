@@ -1,6 +1,15 @@
 import mqtt from "mqtt";
 
-const client = mqtt.connect("mqtt://localhost:1883");
+// Adicionamos LWT
+const client = mqtt.connect("mqtt://localhost:1883", {
+  clientId: "sensor_nivel_01",
+  will: {
+    topic: "aula/status/nivel",
+    payload: "OFFLINE",
+    qos: 1,
+    retain: true
+  }
+});
 
 client.on("connect", () => {
   console.log("PUB QoS1 - Sensor Nível do Reservatório: conectado");
@@ -10,7 +19,8 @@ client.on("connect", () => {
     let index_nivel = Math.floor(Math.random() * arr_nivel.length);
     let nivel = arr_nivel[index_nivel];
 
-    client.publish("aula/qos", `msg ${nivel} (QoS1)`, { qos: 1 });
+    // Uso da Retain Flag
+    client.publish("aula/qos", `msg ${nivel} (QoS1)`, { qos: 1, retain: true });
     console.log("PUB QoS1 enviou:", nivel);
     
   }, 30000);
