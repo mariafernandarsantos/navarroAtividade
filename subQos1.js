@@ -2,7 +2,7 @@ import mqtt from "mqtt";
 
 const options = {
   clientId: "subscriber_01", 
-  clean: false 
+  clean: true 
 };
 
 const client = mqtt.connect("mqtt://localhost:1883", options);

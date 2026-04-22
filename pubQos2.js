@@ -12,7 +12,8 @@ client.on("connect", () => {
     if(temp > 60){
       fumaca = true
 
-      client.publish("aula/qos", `msg Início de incêndio (QoS2)`, { qos: 2 });
+      // Retain flag
+      client.publish("aula/qos", `msg Início de incêndio (QoS2)`, { qos: 2,  retain: true });
       console.log("PUB QoS2 enviou: Início de incêndio");
     }
 

@@ -19,9 +19,8 @@ client.on("connect", () => {
     let index_nivel = Math.floor(Math.random() * arr_nivel.length);
     let nivel = arr_nivel[index_nivel];
 
-    // Uso da Retain Flag
-    client.publish("aula/qos", `msg ${nivel} (QoS1)`, { qos: 1, retain: true });
+    client.publish("aula/qos", `msg ${nivel} (QoS1)`, { qos: 1});
     console.log("PUB QoS1 enviou:", nivel);
     
-  }, 30000);
+  }, 1000);
 });
