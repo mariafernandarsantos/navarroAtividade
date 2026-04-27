@@ -5,7 +5,7 @@ const client = mqtt.connect({
   port: 8883,
   protocol: "mqtts",
   username: "teste",
-  password: "Teste123",
+  password: "",
   rejectUnauthorized: false
 });
 
