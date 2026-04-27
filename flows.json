@@ -1,0 +1,53 @@
+[
+    {
+        "id": "b5e927be1d4fec8e",
+        "type": "mqtt in",
+        "z": "35d3b1e6dd4a589f",
+        "name": "InAlarme",
+        "topic": "casa/banheiro/alarme",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "6dde13ddc3bb6794",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6dde13ddc3bb6794",
+        "type": "mqtt-broker",
+        "name": "HIVEMQ",
+        "broker": "eafaf16c3a9f48f7aa7a9c83646fe667.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
