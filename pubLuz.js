@@ -5,7 +5,9 @@ const client = mqtt.connect("mqtt://localhost:1883", {
   clean: true,
   will: {
     topic: "casa/sala/presenca",
-    payload: "teste msg",
+    payload: JSON.stringify({ 
+        sistema: "off"
+    }),
     qos: 2,
     retain: true
   }
