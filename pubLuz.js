@@ -1,7 +1,5 @@
 import mqtt from "mqtt";
 
-// const brokerUrl = "mqtt://friendly-zebra-6xjjx6j96vqh5gvx-1883.app.github.dev/";
-// const client = mqtt.connect(brokerUrl);
 const client = mqtt.connect("mqtt://localhost:1883", {
   clientId: "sensor_fogo_mosquitto_" + Math.random().toString(16).slice(2),
   clean: true,
