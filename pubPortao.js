@@ -14,7 +14,6 @@ client.on("connect", () => {
   client.subscribe("casa/garagem/portao/comando");
 });
 
-// 2. Quando o botão do Dashboard for apertado, este bloco roda:
 client.on("message", (topic, message) => {
   if (topic === "casa/garagem/portao/comando") {
 
