@@ -2,7 +2,16 @@ import mqtt from "mqtt";
 
 // const brokerUrl = "mqtt://friendly-zebra-6xjjx6j96vqh5gvx-1883.app.github.dev/";
 // const client = mqtt.connect(brokerUrl);
-const client = mqtt.connect("mqtt://localhost:1883");
+const client = mqtt.connect("mqtt://localhost:1883", {
+  clientId: "sensor_fogo_mosquitto_" + Math.random().toString(16).slice(2),
+  clean: true,
+  will: {
+    topic: "casa/sala/presenca",
+    payload: "teste msg",
+    qos: 2,
+    retain: true
+  }
+});
 
 client.on("connect", () => {
   console.log("Sensor de Presença (Codespace) conectado!");

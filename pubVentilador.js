@@ -5,7 +5,7 @@ const options = {
   port: 8883,
   protocol: "mqtts",
   username: "teste",
-  password: "",
+  password: "Teste123",
   rejectUnauthorized: false
 };
 
